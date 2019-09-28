@@ -32,6 +32,5 @@ deploy:
   app: "dkw-10"
   env: "Dkw10-env"
   bucket_name: "elasticbeanstalk-us-east-2-745113398864"
-  bucket_path: dkw-10
   on:
     branch: master
