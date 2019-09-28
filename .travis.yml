@@ -32,5 +32,6 @@ deploy:
   app: "dkw-10"
   env: "Dkw10-env"
   bucket_name: "elasticbeanstalk-us-east-2-745113398864"
+  only_create_app_version: "true"
   on:
     branch: master
