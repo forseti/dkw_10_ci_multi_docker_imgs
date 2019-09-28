@@ -15,7 +15,7 @@ after_success:
   - docker build -t isometria/dkw-10-worker ./worker
 
   # Take those images and push to dockerhub
-  - echo "DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   - docker push isometria/dkw-10-api
   - docker push isometria/dkw-10-client
