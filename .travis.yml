@@ -9,14 +9,14 @@ script:
   - docker run -e CI=true isometria/dkw-10-client npm test -- --coverage
 
 after_success:
-  - docker build -t isometria/dkw-10-api ./api
-  - docker build -t isometria/dkw-10-client ./client
-  - docker build -t isometria/dkw-10-nginx ./nginx
-  - docker build -t isometria/dkw-10-worker ./worker
+  - docker build -t isometria/dkw-10-api:latest ./api
+  - docker build -t isometria/dkw-10-client:latest ./client
+  - docker build -t isometria/dkw-10-nginx:latest ./nginx
+  - docker build -t isometria/dkw-10-worker:latest ./worker
 
   # Take those images and push to dockerhub
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push isometria/dkw-10-api
-  - docker push isometria/dkw-10-client
-  - docker push isometria/dkw-10-nginx
-  - docker push isometria/dkw-10-worker
+  - docker push isometria/dkw-10-api:latest
+  - docker push isometria/dkw-10-client:latest
+  - docker push isometria/dkw-10-nginx:latest
+  - docker push isometria/dkw-10-worker:latest
