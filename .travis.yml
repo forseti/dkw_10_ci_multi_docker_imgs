@@ -21,3 +21,18 @@ after_success:
   - docker push isometria/dkw-10-client
   - docker push isometria/dkw-10-nginx
   - docker push isometria/dkw-10-worker
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id:
+    secure: "$AWS_ACCESS_KEY_ID"
+  secret_access_key:
+    secure: "$AWS_SECRET_ACCESS_KEY"
+  region: "us-east-2"
+  app: "dkw-10"
+  env: "Dkw10-env"
+  bucket_name: "elasticbeanstalk-us-east-2-745113398864"
+  bucket_path: dkw-10
+  only_create_app_version: "true"
+  on:
+    branch: master
