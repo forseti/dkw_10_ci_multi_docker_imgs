@@ -28,7 +28,7 @@ deploy:
     secure: "$AWS_ACCESS_KEY_ID"
   secret_access_key:
     secure: "$AWS_SECRET_ACCESS_KEY"
-  region: "us-east-2"
+  region: "$REGION_ID"
   app: "dkw-10"
   env: "Dkw10-env"
   bucket_name: "elasticbeanstalk-$REGION_ID-$AWS_ACCOUNT_ID"
